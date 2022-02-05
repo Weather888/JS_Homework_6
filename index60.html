@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>index_60</title>
+</head>
+
+<body>
+  <script>
+  
+    const fib = (a) => {
+    const array = [];
+    array[0] = 0;
+    array[1] = 1;
+    for (let i = 2; i <= a; i++) {
+      array[i] = array[i - 2] + array[i - 1];
+    }
+    return (array[a]);
+  }
+
+    function v (valid) {
+      if (isNaN(+valid) || valid.replace(/\s+/g, '') == '' || valid < 0) {
+        alert('Некорректное число!')
+        return 0
+      }
+      else return 1;
+    }
+    
+    let x;
+
+    do {
+      x = prompt('Введите целое положительное число');
+    } while (!v (x));
+
+    document.write('Введенное число:', ' ' + x);
+
+    if (fib(x) == Infinity)
+      document.write('<br> Результат слишком большой')
+    else
+      document.write('<br> Число Фибоначчи для введенного значения:', ' ' + fib(x));
+  </script>
+  
+</body>
+</html>
+
