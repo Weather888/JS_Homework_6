@@ -22,7 +22,7 @@
   }
 
     function v (valid) {
-      if (isNaN(+valid) || valid.replace(/\s+/g, '') == '' || valid < 0) {
+      if (isNaN(+valid) || valid.replace(/\s+/g, '') == '' || valid < 0 || valid > 1450) {
         alert('Некорректное число!')
         return 0
       }
@@ -32,7 +32,7 @@
     let x;
 
     do {
-      x = prompt('Введите целое положительное число');
+      x = prompt('Введите целое положительное число (до 1450)');
     } while (!v (x));
 
     document.write('Введенное число:', ' ' + x);
